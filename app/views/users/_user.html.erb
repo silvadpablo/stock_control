@@ -1,0 +1,23 @@
+<div id="<%= dom_id user %>">
+  <p>
+    <strong>Name:</strong>
+    <%= user.name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= user.email %>
+  </p>
+
+  <% user.stores.each do |store| %>
+    <p>
+      <strong>Store:</strong>
+      <%= store.name %>
+    </p>
+    <p>
+      <strong>Store Address:</strong>
+      <%= store.location %>
+    </p>
+  <% end %>
+
+</div>
