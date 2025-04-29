@@ -23,8 +23,62 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <%# Navbar Component %>
+    <nav class="navbar bg-base-100 shadow-sm">
+      <div class="flex-1">
+        <a class="btn btn-ghost text-xl">Sua Loja</a>
+      </div>
+      <div class="flex-none">
+        <div class="dropdown dropdown-end">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+            <div class="w-10 rounded-full">
+              <img
+                alt="Tailwind CSS Navbar component"
+                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+            </div>
+          </div>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+            <li>
+              <a class="justify-between">
+                Profile
+                <span class="badge">New</span>
+              </a>
+            </li>
+            <li><a>Settings</a></li>
+            <li><a>Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <%# Aside component %>
+    <div class="flex">
+    <aside class="drawer-sid">
+      <ul class="menu text-base-content min-h-full p-4">
+        <!-- Sidebar content here -->
+        <li>
+          <%= link_to stores_path, class: "" do %>
+            <span> Lojas </span>
+          <% end %>
+          <%= link_to stocks_path, class: "" do %>
+            <span> Estoques </span>
+          <% end %>
+          <%= link_to users_path, class: "" do %>
+            <span> Usuários </span>
+          <% end %>
+        </li>
+      </ul>
+    </aside>
+
+    <div>
       <%= yield %>
-    </main>
+    </div>
+
+    
+    <%# <main class="container mx-auto mt-28 px-5 flex"> %>
+      <%#= yield %>
+    <%# </main> %>
   </body>
 </html>
